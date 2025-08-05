@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>XIN</title>
+  <!-- 引入 Primer CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/@primer/css@^20.2.4/dist/primer.css">
+  <style>
+    body {
+      background-color: #f6f8fa;
+    }
+    .repo-header {
+      background: #24292f;
+      color: #fff;
+      padding: 16px 24px;
+      font-size: 1.5rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #e1e4e8;
+    }
+    .repo-header svg {
+      margin-right: 12px;
+    }
+    .content {
+      max-width: 800px;
+      margin: 40px auto;
+      background: #fff;
+      border: 1px solid #e1e4e8;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(27,31,35,0.04);
+      padding: 32px;
+    }
+    .file-list .Box-row {
+      transition: background 0.2s;
+    }
+    .file-list .Box-row:hover {
+      background: #f6f8fa;
+    }
+  </style>
+</head>
+<body>
+  <!-- 仓库头部 -->
+  <div class="repo-header">
+    <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" fill="#fff">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.2 1.87.86 2.33.66.07-.52.28-.86.51-1.06-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82a7.5 7.5 0 0 1 2-.27c.68.003 1.36.092 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.74.54 1.49 0 1.08-.01 1.95-.01 2.22 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
+    </svg>
+    L-X-YU / my-downloads
+  </div>
+  
+  <div class="content">
+    <h2 class="mb-3">文件下载</h2>
+    <div class="Box file-list">
+      <div class="Box-row d-flex flex-items-center">
+        <span class="mr-2"><svg height="16" width="16" fill="#6a737d" viewBox="0 0 16 16"><path d="M1.75 2.5A.75.75 0 0 1 2.5 1.75h11a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-.75.75h-11a.75.75 0 0 1-.75-.75v-11ZM3 3v10h10V3H3Z"></path></svg></span>
+        <a href="docs/example.pdf" download>example.pdf</a>
+        <span class="ml-2 text-gray">PDF 文档</span>
+      </div>
+      <div class="Box-row d-flex flex-items-center">
+        <span class="mr-2"><svg height="16" width="16" fill="#6a737d" viewBox="0 0 16 16"><path d="M1.75 2.5A.75.75 0 0 1 2.5 1.75h11a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-.75.75h-11a.75.75 0 0 1-.75-.75v-11ZM3 3v10h10V3H3Z"></path></svg></span>
+        <a href="images/photo.jpg" download>photo.jpg</a>
+        <span class="ml-2 text-gray">图片</span>
+      </div>
+      <div class="Box-row d-flex flex-items-center">
+        <span class="mr-2"><svg height="16" width="16" fill="#6a737d" viewBox="0 0 16 16"><path d="M1.75 2.5A.75.75 0 0 1 2.5 1.75h11a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-.75.75h-11a.75.75 0 0 1-.75-.75v-11ZM3 3v10h10V3H3Z"></path></svg></span>
+        <a href="xin.txt" download>xin.txt</a>
+        <span class="ml-2 text-gray">111</span>
+      </div>
+    </div>
+    <div class="mt-4 text-gray">© 2025 L-X-YU | 下载网站</div>
+  </div>
+</body>
+</html>
