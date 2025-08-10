@@ -2,40 +2,160 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
-  <title>XIN</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L-X-YU 资源中心</title>
   <!-- 引入 Primer CSS -->
   <link rel="stylesheet" href="https://unpkg.com/@primer/css@^20.2.4/dist/primer.css">
+  <!-- 引入 Font Awesome 图标 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    body {
-      background-color: #f6f8fa;
+    :root {
+      --primary-color: #3a86ff;
+      --secondary-color: #8338ec;
+      --dark-color: #24292f;
+      --light-color: #f8f9fa;
+      --border-color: #e1e4e8;
     }
+    
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fa 100%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      color: #2d3339;
+    }
+    
     .repo-header {
-      background: #24292f;
+      background: linear-gradient(135deg, var(--dark-color) 0%, #1a1e24 100%);
       color: #fff;
-      padding: 16px 24px;
+      padding: 18px 24px;
       font-size: 1.5rem;
       font-weight: 600;
       display: flex;
       align-items: center;
-      border-bottom: 1px solid #e1e4e8;
+      border-bottom: none;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
+    
     .repo-header svg {
       margin-right: 12px;
+      filter: drop-shadow(0 0 4px rgba(255,255,255,0.2));
     }
+    
     .content {
-      max-width: 800px;
+      max-width: 900px;
       margin: 40px auto;
       background: #fff;
-      border: 1px solid #e1e4e8;
-      border-radius: 6px;
-      box-shadow: 0 1px 3px rgba(27,31,35,0.04);
-      padding: 32px;
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
     }
+    
+    .content::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    }
+    
+    h2 {
+      color: var(--dark-color);
+      font-weight: 600;
+      margin-bottom: 24px;
+      position: relative;
+      padding-left: 16px;
+    }
+    
+    h2::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      height: 20px;
+      width: 4px;
+      background: var(--primary-color);
+      border-radius: 2px;
+    }
+    
     .file-list .Box-row {
-      transition: background 0.2s;
+      transition: all 0.3s ease;
+      border-radius: 8px;
+      padding: 14px 16px;
+      margin-bottom: 8px;
+      border: 1px solid var(--border-color);
     }
+    
     .file-list .Box-row:hover {
-      background: #f6f8fa;
+      background: var(--light-color);
+      transform: translateX(5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      border-color: var(--primary-color);
+    }
+    
+    .file-list a {
+      color: var(--dark-color);
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.2s;
+      flex-grow: 1;
+    }
+    
+    .file-list a:hover {
+      color: var(--primary-color);
+    }
+    
+    .file-icon {
+      color: var(--primary-color);
+      margin-right: 12px;
+      width: 20px;
+      text-align: center;
+    }
+    
+    .file-description {
+      color: #6a737d;
+      font-size: 0.9em;
+      margin-left: 12px;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+      color: #6a737d;
+      font-size: 0.9em;
+    }
+    
+    .download-btn {
+      margin-left: auto;
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-size: 0.8em;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    
+    .download-btn:hover {
+      background: var(--secondary-color);
+      transform: translateY(-1px);
+    }
+    
+    @media (max-width: 768px) {
+      .content {
+        margin: 20px;
+        padding: 24px;
+      }
+      
+      .repo-header {
+        padding: 14px 20px;
+        font-size: 1.2rem;
+      }
     }
   </style>
 </head>
@@ -45,35 +165,44 @@
     <svg height="32" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32" data-view-component="true" fill="#fff">
       <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.2 1.87.86 2.33.66.07-.52.28-.86.51-1.06-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.22 2.2.82a7.5 7.5 0 0 1 2-.27c.68.003 1.36.092 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.74.54 1.49 0 1.08-.01 1.95-.01 2.22 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path>
     </svg>
-    L-X-YU / 文件目录
+    <span>L-X-YU / <strong>资源中心</strong></span>
   </div>
-  
+
   <div class="content">
-    <h2 class="mb-3">文件下载</h2>
+    <h2><i class="fas fa-cloud-download-alt mr-2"></i>文件下载</h2>
     <div class="Box file-list">
       <div class="Box-row d-flex flex-items-center">
-        <span class="mr-2"><svg height="16" width="16" fill="#6a737d" viewBox="0 0 16 16"><path d="M1.75 2.5A.75.75 0 0 1 2.5 1.75h11a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-.75.75h-11a.75.75 0 0 1-.75-.75v-11ZM3 3v10h10V3H3Z"></path></svg></span>
+        <span class="file-icon"><i class="fas fa-file-code"></i></span>
         <a href="xin.py" download>xin.py</a>
-        <span class="ml-2 text-gray">极域数据包重发脚本</span>
+        <span class="file-description">极域数据包重发脚本</span>
+        <button class="download-btn">下载</button>
       </div>
-  <div class="Box-row d-flex flex-items-center">
-        <span class="mr-2"><svg height="16" width="16" fill="#6a737d" viewBox="0 0 16 16"><path d="M1.75 2.5A.75.75 0 0 1 2.5 1.75h11a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-.75.75h-11a.75.75 0 0 1-.75-.75v-11ZM3 3v10h10V3H3Z"></path></svg></span>
+      
+      <div class="Box-row d-flex flex-items-center">
+        <span class="file-icon"><i class="fas fa-mobile-alt"></i></span>
         <a href="images/一键安装安卓驱动_V1.0.5.zip" download>安卓驱动</a>
-        <span class="ml-2 text-gray">安卓驱动</span>
+        <span class="file-description">一键安装安卓设备驱动</span>
+        <button class="download-btn">下载</button>
       </div>
-  <div class="Box-row d-flex flex-items-center">
-        <span class="mr-2"><svg height="16" width="16" fill="#6a737d" viewBox="0 0 16 16"><path d="M1.75 2.5A.75.75 0 0 1 2.5 1.75h11a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-.75.75h-11a.75.75 0 0 1-.75-.75v-11ZM3 3v10h10V3H3Z"></path></svg></span>
+      
+      <div class="Box-row d-flex flex-items-center">
+        <span class="file-icon"><i class="fas fa-tools"></i></span>
         <a href="images/搞机工具箱10.1.0.zip" download>搞机工具箱</a>
-        <span class="ml-2 text-gray">搞机工具箱</span>
+        <span class="file-description">安卓设备调试工具集</span>
+        <button class="download-btn">下载</button>
       </div>
-  <div class="Box-row d-flex flex-items-center">
-        <span class="mr-2"><svg height="16" width="16" fill="#6a737d" viewBox="0 0 16 16"><path d="M1.75 2.5A.75.75 0 0 1 2.5 1.75h11a.75.75 0 0 1 .75.75v11a.75.75 0 0 1-.75.75h-11a.75.75 0 0 1-.75-.75v-11ZM3 3v10h10V3H3Z"></path></svg></span>
+      
+      <div class="Box-row d-flex flex-items-center">
+        <span class="file-icon"><i class="fas fa-network-wired"></i></span>
         <a href="images/有线上网工具2.0.1.zip" download>有线上网工具</a>
-        <span class="ml-2 text-gray">有线上网</span>
+        <span class="file-description">网络连接辅助工具</span>
+        <button class="download-btn">下载</button>
       </div>
     </div>
-    <div class="mt-4 text-gray">©L-X-YU | 用“心”看世界</div>
+    
+    <div class="footer">
+      <p>© 2023 L-X-YU | 用"心"看世界 <i class="fas fa-heart ml-1" style="color: #ff4757;"></i></p>
+    </div>
   </div>
 </body>
-
 </html>
