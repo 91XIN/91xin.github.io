@@ -139,7 +139,6 @@
       font-size: 0.8em;
       font-weight: 500;
       transition: all 0.2s;
-      cursor: pointer;
     }
     
     .download-btn:hover {
@@ -174,30 +173,30 @@
     <div class="Box file-list">
       <div class="Box-row d-flex flex-items-center">
         <span class="file-icon"><i class="fas fa-file-code"></i></span>
-        <a href="xin.py" download="xin.py" id="download-xin">xin.py</a>
+        <a href="xin.py" download>xin.py</a>
         <span class="file-description">极域数据包重发脚本</span>
-        <button class="download-btn" onclick="downloadFile('xin.py')">下载</button>
+        <button class="download-btn">下载</button>
       </div>
       
       <div class="Box-row d-flex flex-items-center">
         <span class="file-icon"><i class="fas fa-mobile-alt"></i></span>
-        <a href="images/一键安装安卓驱动_V1.0.5.zip" download="安卓驱动.zip" id="download-driver">安卓驱动</a>
+        <a href="images/一键安装安卓驱动_V1.0.5.zip" download>安卓驱动</a>
         <span class="file-description">一键安装安卓设备驱动</span>
-        <button class="download-btn" onclick="downloadFile('images/一键安装安卓驱动_V1.0.5.zip')">下载</button>
+        <button class="download-btn">下载</button>
       </div>
       
       <div class="Box-row d-flex flex-items-center">
         <span class="file-icon"><i class="fas fa-tools"></i></span>
-        <a href="images/搞机工具箱10.1.0.zip" download="搞机工具箱.zip" id="download-toolbox">搞机工具箱</a>
+        <a href="images/搞机工具箱10.1.0.zip" download>搞机工具箱</a>
         <span class="file-description">安卓设备调试工具集</span>
-        <button class="download-btn" onclick="downloadFile('images/搞机工具箱10.1.0.zip')">下载</button>
+        <button class="download-btn">下载</button>
       </div>
       
       <div class="Box-row d-flex flex-items-center">
         <span class="file-icon"><i class="fas fa-network-wired"></i></span>
-        <a href="images/有线上网工具2.0.1.zip" download="有线上网工具.zip" id="download-network">有线上网工具</a>
+        <a href="images/有线上网工具2.0.1.zip" download>有线上网工具</a>
         <span class="file-description">网络连接辅助工具</span>
-        <button class="download-btn" onclick="downloadFile('images/有线上网工具2.0.1.zip')">下载</button>
+        <button class="download-btn">下载</button>
       </div>
     </div>
     
@@ -205,41 +204,5 @@
       <p>© 2023 L-X-YU | 用"心"看世界 <i class="fas fa-heart ml-1" style="color: #ff4757;"></i></p>
     </div>
   </div>
-
-  <script>
-    // 下载文件函数
-    function downloadFile(filePath) {
-      // 从文件路径中提取文件名
-      const fileName = filePath.split('/').pop();
-      
-      // 创建一个隐藏的<a>元素用于触发下载
-      const link = document.createElement('a');
-      link.href = filePath;
-      link.download = fileName;
-      link.style.display = 'none';
-      
-      // 添加到文档中
-      document.body.appendChild(link);
-      
-      // 触发点击事件
-      link.click();
-      
-      // 移除元素
-      document.body.removeChild(link);
-      
-      // 显示下载提示
-      alert(`正在下载: ${fileName}\n如果下载没有自动开始，请检查文件路径是否正确。`);
-    }
-    
-    // 为所有下载链接添加点击事件
-    document.querySelectorAll('.file-list a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const filePath = this.getAttribute('href');
-        const fileName = this.getAttribute('download') || filePath.split('/').pop();
-        downloadFile(filePath);
-      });
-    });
-  </script>
 </body>
 </html>
