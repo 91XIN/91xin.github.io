@@ -4,9 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>L-X-YU 资源中心</title>
-  <!-- 引入 Primer CSS -->
+  <!-- Primer CSS -->
   <link rel="stylesheet" href="https://unpkg.com/@primer/css@^20.2.4/dist/primer.css">
-  <!-- 引入 Font Awesome 图标 -->
+  <!-- Font Awesome 图标 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -16,14 +16,12 @@
       --light-color: #f8f9fa;
       --border-color: #e1e4e8;
     }
-    
     body {
       background: linear-gradient(135deg, #f5f7fa 0%, #f8f9fa 100%);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       min-height: 100vh;
       color: #2d3339;
     }
-    
     .repo-header {
       background: linear-gradient(135deg, var(--dark-color) 0%, #1a1e24 100%);
       color: #fff;
@@ -35,12 +33,10 @@
       border-bottom: none;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     }
-    
     .repo-header svg {
       margin-right: 12px;
       filter: drop-shadow(0 0 4px rgba(255,255,255,0.2));
     }
-    
     .content {
       max-width: 900px;
       margin: 40px auto;
@@ -52,7 +48,6 @@
       position: relative;
       overflow: hidden;
     }
-    
     .content::before {
       content: "";
       position: absolute;
@@ -62,7 +57,6 @@
       height: 100%;
       background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
     }
-    
     h2 {
       color: var(--dark-color);
       font-weight: 600;
@@ -70,7 +64,6 @@
       position: relative;
       padding-left: 16px;
     }
-    
     h2::before {
       content: "";
       position: absolute;
@@ -81,7 +74,6 @@
       background: var(--primary-color);
       border-radius: 2px;
     }
-    
     .file-list .Box-row {
       transition: all 0.3s ease;
       border-radius: 8px;
@@ -89,46 +81,34 @@
       margin-bottom: 8px;
       border: 1px solid var(--border-color);
     }
-    
     .file-list .Box-row:hover {
       background: var(--light-color);
       transform: translateX(5px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.05);
       border-color: var(--primary-color);
     }
-    
-    .file-list a {
+    .file-list a.download-link {
       color: var(--dark-color);
       font-weight: 500;
       text-decoration: none;
       transition: color 0.2s;
       flex-grow: 1;
+      margin-right: 12px;
     }
-    
-    .file-list a:hover {
+    .file-list a.download-link:hover {
       color: var(--primary-color);
     }
-    
     .file-icon {
       color: var(--primary-color);
       margin-right: 12px;
       width: 20px;
       text-align: center;
     }
-    
     .file-description {
       color: #6a737d;
       font-size: 0.9em;
       margin-left: 12px;
     }
-    
-    .footer {
-      text-align: center;
-      margin-top: 32px;
-      color: #6a737d;
-      font-size: 0.9em;
-    }
-    
     .download-btn {
       margin-left: auto;
       background: var(--primary-color);
@@ -140,19 +120,25 @@
       font-weight: 500;
       transition: all 0.2s;
       cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
     }
-    
     .download-btn:hover {
       background: var(--secondary-color);
       transform: translateY(-1px);
+      color: #fff;
     }
-    
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+      color: #6a737d;
+      font-size: 0.9em;
+    }
     @media (max-width: 768px) {
       .content {
         margin: 20px;
         padding: 24px;
       }
-      
       .repo-header {
         padding: 14px 20px;
         font-size: 1.2rem;
@@ -169,75 +155,37 @@
     <span>L-X-YU / <strong>资源中心</strong></span>
   </div>
 
-<div class="Box file-list">
-  <div class="Box-row d-flex flex-items-center">
-    <span class="file-icon"><i class="fas fa-file-code"></i></span>
-    <a href="xin.py" download="xin.py" class="download-link">xin.py</a>
-    <span class="file-description">极域数据包重发脚本</span>
-    <a href="xin.py" download="xin.py" class="download-btn">下载</a>
-  </div>
-  
-  <div class="Box-row d-flex flex-items-center">
-    <span class="file-icon"><i class="fas fa-mobile-alt"></i></span>
-      <a href="一键安装安卓驱动_V1.0.5.zip" download="xin.py" class="download-link">驱动</a>
-    <span class="file-description">驱动</span>
-    <a href="xin.py" download="xin.py" class="download-btn">下载</a>
+  <div class="content">
+    <h2><i class="fas fa-cloud-download-alt mr-2"></i>文件下载</h2>
+    <div class="Box file-list">
+      <div class="Box-row d-flex flex-items-center">
+        <span class="file-icon"><i class="fas fa-file-code"></i></span>
+        <a href="xin.py" download="xin.py" class="download-link">xin.py</a>
+        <span class="file-description">极域数据包重发脚本</span>
+        <a href="xin.py" download="xin.py" class="download-btn">下载</a>
       </div>
-  
-  <div class="Box-row d-flex flex-items-center">
-    <span class="file-icon"><i class="fas fa-tools"></i></span>
-    <a href="images/搞机工具箱10.1.0.zip" download="搞机工具箱.zip" class="download-link">搞机工具箱</a>
-    <span class="file-description">安卓设备调试工具集</span>
-    <a href="images/搞机工具箱10.1.0.zip" download="搞机工具箱.zip" class="download-btn">下载</a>
-  </div>
-  
-  <div class="Box-row d-flex flex-items-center">
-    <span class="file-icon"><i class="fas fa-network-wired"></i></span>
-    <a href="images/有线上网工具2.0.1.zip" download="有线上网工具.zip" class="download-link">有线上网工具</a>
-    <span class="file-description">网络连接辅助工具</span>
-    <a href="images/有线上网工具2.0.1.zip" download="有线上网工具.zip" class="download-btn">下载</a>
-  </div>
-</div>
-    
+      <div class="Box-row d-flex flex-items-center">
+        <span class="file-icon"><i class="fas fa-mobile-alt"></i></span>
+        <a href="images/一键安装安卓驱动_V1.0.5.zip" download="安卓驱动.zip" class="download-link">安卓驱动</a>
+        <span class="file-description">一键安装安卓设备驱动</span>
+        <a href="images/一键安装安卓驱动_V1.0.5.zip" download="安卓驱动.zip" class="download-btn">下载</a>
+      </div>
+      <div class="Box-row d-flex flex-items-center">
+        <span class="file-icon"><i class="fas fa-tools"></i></span>
+        <a href="images/搞机工具箱10.1.0.zip" download="搞机工具箱.zip" class="download-link">搞机工具箱</a>
+        <span class="file-description">安卓设备调试工具集</span>
+        <a href="images/搞机工具箱10.1.0.zip" download="搞机工具箱.zip" class="download-btn">下载</a>
+      </div>
+      <div class="Box-row d-flex flex-items-center">
+        <span class="file-icon"><i class="fas fa-network-wired"></i></span>
+        <a href="images/有线上网工具2.0.1.zip" download="有线上网工具.zip" class="download-link">有线上网工具</a>
+        <span class="file-description">网络连接辅助工具</span>
+        <a href="images/有线上网工具2.0.1.zip" download="有线上网工具.zip" class="download-btn">下载</a>
+      </div>
+    </div>
     <div class="footer">
       <p>© 2023 L-X-YU | 用"心"看世界 <i class="fas fa-heart ml-1" style="color: #ff4757;"></i></p>
     </div>
   </div>
-
-  <script>
-    // 下载文件函数
-    function downloadFile(filePath) {
-      // 从文件路径中提取文件名
-      const fileName = filePath.split('/').pop();
-      
-      // 创建一个隐藏的<a>元素用于触发下载
-      const link = document.createElement('a');
-      link.href = filePath;
-      link.download = fileName;
-      link.style.display = 'none';
-      
-      // 添加到文档中
-      document.body.appendChild(link);
-      
-      // 触发点击事件
-      link.click();
-      
-      // 移除元素
-      document.body.removeChild(link);
-      
-      // 显示下载提示
-      alert(`正在下载: ${fileName}\n如果下载没有自动开始，请检查文件路径是否正确。`);
-    }
-    
-    // 为所有下载链接添加点击事件
-    document.querySelectorAll('.file-list a').forEach(link => {
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const filePath = this.getAttribute('href');
-        const fileName = this.getAttribute('download') || filePath.split('/').pop();
-        downloadFile(filePath);
-      });
-    });
-  </script>
 </body>
 </html>
